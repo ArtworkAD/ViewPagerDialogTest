@@ -1,6 +1,6 @@
 # Stacktrace
 
-
+```
 10-23 22:59:47.241 4146-4146/de.azzoft.viewpagerdialogtest E/FragmentManager: No view found for id 0x7f0c0083 (de.azzoft.viewpagerdialogtest:id/root_frame) for fragment SecondLevelFragment{318aa1c7 #0 id=0x7f0c0083 NESTED}
 10-23 22:59:47.241 4146-4146/de.azzoft.viewpagerdialogtest E/FragmentManager: Activity state:
 10-23 22:59:47.241 4146-4146/de.azzoft.viewpagerdialogtest D/FragmentManager:   Local FragmentActivity 3ed18de1 State:
@@ -103,3 +103,4 @@
 10-23 22:59:47.250 4146-4146/de.azzoft.viewpagerdialogtest E/AndroidRuntime:     at java.lang.reflect.Method.invoke(Method.java:372) 
 10-23 22:59:47.250 4146-4146/de.azzoft.viewpagerdialogtest E/AndroidRuntime:     at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:903) 
 10-23 22:59:47.250 4146-4146/de.azzoft.viewpagerdialogtest E/AndroidRuntime:     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:698) 
+```
