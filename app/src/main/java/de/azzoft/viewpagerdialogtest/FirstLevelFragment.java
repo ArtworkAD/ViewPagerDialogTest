@@ -12,14 +12,13 @@ public class FirstLevelFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        setRetainInstance(true);
         View root = inflater.inflate(R.layout.first_level_fragment, container, false);
         root.findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SecondLevelFragment nestedNestedFragment = (SecondLevelFragment) getActivity().getSupportFragmentManager().findFragmentByTag("NESTED");
+                SecondLevelFragment nestedNestedFragment = (SecondLevelFragment) getFragmentManager().findFragmentByTag("NESTED");
                 if (nestedNestedFragment == null) {
-                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.root_frame, new SecondLevelFragment(), "NESTED").addToBackStack(null).commit();
+                    getFragmentManager().beginTransaction().add(R.id.root_frame, new SecondLevelFragment(), "NESTED").addToBackStack(null).commit();
                 }
             }
         });
@@ -31,7 +30,6 @@ public class FirstLevelFragment extends Fragment {
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            setRetainInstance(true);
             return inflater.inflate(R.layout.second_level_fragment, container, false);
         }
     }

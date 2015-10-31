@@ -14,8 +14,17 @@ public class RootFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.root_fragment, container, false);
         if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction().add(R.id.root_frame, new FirstLevelFragment(), "ROOT").commit();
+            getChildFragmentManager().beginTransaction().add(R.id.root_frame, new FirstLevelFragment(), "ROOT").commit();
         }
         return root;
+    }
+
+    public boolean onBackPressed() {
+        int count = getChildFragmentManager().getBackStackEntryCount();
+        if(count > 0){
+            getChildFragmentManager().popBackStackImmediate();
+            return true;
+        }
+        return false;
     }
 }
