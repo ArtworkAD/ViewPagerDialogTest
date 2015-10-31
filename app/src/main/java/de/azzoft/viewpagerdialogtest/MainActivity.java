@@ -44,6 +44,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.viewpager);
+        if(fragment instanceof RootFragment){
+            boolean handled = ((RootFragment)fragment).onBackPressed();
+            if(handled){
+                return;
+            }
+        }
+        super.onBackPressed();
+    }
+
     /**
      * Dialog as fragment.
      */

@@ -18,4 +18,13 @@ public class RootFragment extends Fragment {
         }
         return root;
     }
+
+    public boolean onBackPressed() {
+        int count = getChildFragmentManager().getBackStackEntryCount();
+        if(count > 0){
+            getChildFragmentManager().popBackStackImmediate();
+            return true;
+        }
+        return false;
+    }
 }
